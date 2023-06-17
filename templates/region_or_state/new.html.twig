@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New RegionOrState{% endblock %}
+
+{% block body %}
+    <h1>Create new RegionOrState</h1>
+
+    {{ include('region_or_state/_form.html.twig') }}
+
+    <a href="{{ path('app_region_or_state_index') }}">back to list</a>
+{% endblock %}
