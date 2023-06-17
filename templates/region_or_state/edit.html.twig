@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit RegionOrState{% endblock %}
+
+{% block body %}
+    <h1>Edit RegionOrState</h1>
+
+    {{ include('region_or_state/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_region_or_state_index') }}">back to list</a>
+
+    {{ include('region_or_state/_delete_form.html.twig') }}
+{% endblock %}

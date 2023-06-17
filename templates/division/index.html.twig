@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Division index{% endblock %}
+
+{% block body %}
+    <h1>Division index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>UpdateAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for division in divisions %}
+            <tr>
+                <td>{{ division.id }}</td>
+                <td>{{ division.name }}</td>
+                <td>{{ division.description }}</td>
+                <td>{{ division.updateAt ? division.updateAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_division_show', {'id': division.id}) }}">show</a>
+                    <a href="{{ path('app_division_edit', {'id': division.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_division_new') }}">Create new</a>
+{% endblock %}
